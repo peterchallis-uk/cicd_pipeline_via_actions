@@ -1,0 +1,34 @@
+# .github/workflows/test-pipeline.yml
+
+name: Pipeline Test Run
+
+on:
+  # Triggers the workflow on every push to any branch
+  push:
+
+  # Allows you to run this workflow manually from the Actions tab on GitHub
+  workflow_dispatch:
+
+jobs:
+  # Define a single job named 'basic_test'
+  basic_test:
+    name: Simple Validation Job
+    
+    # Specify the runner environment
+    runs-on: ubuntu-latest
+
+    # Define the steps for this job
+    steps:
+      # Step 1: Display a greeting
+      - name: Greet the World
+        run: echo "Hello! This is the start of the pipeline test."
+        
+      # Step 2: Show the runner's current directory and OS info
+      - name: Display Environment Info
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Runner OS: $(uname -a)"
+          
+      # Step 3: Indicate success
+      - name: Pipeline Finished
+        run: echo "The test pipeline executed successfully! ✅"
