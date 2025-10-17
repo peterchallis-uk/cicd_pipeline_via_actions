@@ -9,6 +9,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab on GitHub
   workflow_dispatch:
 
+  schedule:
+    - cron: '0 8 * * *'  # Runs daily at 08:00 UTC
 jobs:
   # Define a single job named 'basic_test'
   basic_test:
